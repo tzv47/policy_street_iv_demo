@@ -1,0 +1,28 @@
+{
+  "name": "policy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "moment": "2.24.0",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.9.27"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  },
+  "scripts": {
+    "docker:dev": "npm install && NODE_PATH=. nodemon -L index.js",
+    "dev": "nodemon -L index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "abu",
+  "license": "ISC"
+}

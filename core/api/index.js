@@ -19,7 +19,7 @@ app.use(router);
 
 // the catch all route
 app.all('*', (req, res) => {
-  res.status(404).send({ msg: 'not found' });
+  res.status(404).send({ msg: 'route not found' });
 });
 
 module.exports = app;

@@ -12,6 +12,8 @@ const LocalStrategy = require('passport-local');
 const port = require('./config').port;
 const userService = require('./services/userService');
 const authMiddleware = require('./middleware/authentication');
+const errHandlerMiddleware = require('./middleware/error-handling');
+const methodOverride = require('method-override');
 
 const api = require('./api');
 
@@ -23,6 +25,9 @@ app.use(
     extended: true,
   })
 );
+
+app.use(methodOverride());
+app.use(errHandlerMiddleware.clientErrorHandler);
 
 app.use(authMiddleware.filterRequest);
 passport.serializeUser((user, done) => {
